@@ -1,17 +1,17 @@
-# 🚗 Deteksi Plat Nomor - Streamlit App
+# Deteksi Plat Nomor - Streamlit App
 
-Aplikasi deteksi plat nomor berbasis **YOLOv11** dengan fitur enhancement kualitas plat. Dibangun dengan Streamlit untuk interface yang user-friendly dan interaktif.
+Aplikasi deteksi plat nomor berbasis YOLOv11 dengan bilateral filtering and CLAHE enhancement. Runs on Streamlit for real-time image and video processing.
 
-## 📋 Fitur Utama
+## Features
 
-- ✅ **Deteksi Gambar** - Upload gambar, lihat deteksi plat nomor real-time
-- ✅ **Deteksi Video** - Proses video, dapatkan output dengan annotasi deteksi
-- ✅ **Image Enhancement** - Bilateral Filter + CLAHE untuk kualitas plat lebih baik
-- ✅ **Adjustable Settings** - Confidence threshold, model selection, enhancement toggle
-- ✅ **Cropped Plates** - Lihat hasil cropping plat yang terdeteksi
-- ✅ **Download Results** - Export video hasil deteksi
+- Deteksi Gambar — Upload gambar, lihat deteksi plat nomor real-time
+- Deteksi Video — Proses video, dapatkan output dengan annotasi deteksi
+- Image Enhancement — Bilateral Filter + CLAHE untuk kualitas plat lebih baik
+- Adjustable Settings — Confidence threshold, model selection, enhancement toggle
+- Cropped Plates — Lihat hasil cropping plat yang terdeteksi
+- Download Results — Export video hasil deteksi
 
-## 🎯 Use Cases
+## Use Cases
 
 - Sistem keamanan parkir
 - Toll gate automation
@@ -19,7 +19,7 @@ Aplikasi deteksi plat nomor berbasis **YOLOv11** dengan fitur enhancement kualit
 - Smart parking solutions
 - Law enforcement applications
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -29,7 +29,7 @@ Aplikasi deteksi plat nomor berbasis **YOLOv11** dengan fitur enhancement kualit
 | **Computation** | NumPy, PyTorch |
 | **Language** | Python 3.8+ |
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8 atau lebih tinggi
@@ -59,26 +59,26 @@ Aplikasi deteksi plat nomor berbasis **YOLOv11** dengan fitur enhancement kualit
 5. **Buka di browser**
    - Aplikasi akan otomatis membuka di `http://localhost:8501`
 
-## 🚀 Usage
+## Usage
 
 ### Image Detection
-1. Click tab **📷 Image**
+1. Click tab Image
 2. Upload gambar atau gunakan sample
 3. Lihat hasil deteksi plat nomor
 4. Hasil enhancement plat akan ditampilkan di bawah
 
 ### Video Detection
-1. Click tab **🎥 Video**
+1. Click tab Video
 2. Upload video atau gunakan sample
 3. Proses akan berjalan dengan progress bar
 4. Download hasil video dengan deteksi
 
 ### Settings (Sidebar)
-- **Model Selection**: Pilih trained model atau default YOLOv11
-- **Enhancement**: Toggle untuk enhance plat quality
-- **Confidence Threshold**: Adjust minimum confidence untuk deteksi
+- Model Selection — Pilih trained model atau default YOLOv11
+- Enhancement — Toggle untuk enhance plat quality
+- Confidence Threshold — Adjust minimum confidence untuk deteksi
 
-## 📊 Project Structure
+## Project Structure
 
 ```
 plate-detection-streamlit/
@@ -94,7 +94,7 @@ E:\UB\Semester 7\PCD\Deteksi plat nomor\
 └── [training data]
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Model Paths
 Update path model di `app.py` jika struktur folder berbeda:
@@ -114,7 +114,7 @@ filtered = cv2.bilateralFilter(crop, d=9, sigmaColor=75, sigmaSpace=75)
 clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
 ```
 
-## 📈 Model Performance
+## Model Performance
 
 | Metric | Value |
 |--------|-------|
@@ -123,17 +123,15 @@ clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
 | Model Size | ~13MB |
 | Supported Resolutions | 320x320 to 1280x1280 |
 
-## 🎨 Image Enhancement Techniques
+## Image Enhancement Techniques
 
-### 1. Bilateral Filter
-- Mengurangi noise sambil mempertahankan edge
-- Parameter: `d=9, sigmaColor=75, sigmaSpace=75`
+### Bilateral Filter
+Reduces noise while preserving edges. Parameter: d=9, sigmaColor=75, sigmaSpace=75
 
-### 2. CLAHE (Contrast Limited Adaptive Histogram Equalization)
-- Meningkatkan kontras lokal pada plat nomor
-- Parameter: `clipLimit=2.0, tileGridSize=(8, 8)`
+### CLAHE (Contrast Limited Adaptive Histogram Equalization)
+Improves local contrast on plate regions. Parameter: clipLimit=2.0, tileGridSize=(8, 8)
 
-### Workflow Enhancement
+### Enhancement Workflow
 ```
 Original Plate Image
        ↓
@@ -150,7 +148,7 @@ Convert LAB → BGR
 Enhanced Plate Image
 ```
 
-## 🔍 Detection Workflow
+## Detection Workflow
 
 ```
 Input Image/Video
@@ -170,51 +168,42 @@ Annotate & Display
 Output Results
 ```
 
-## ⚡ Performance Tips
+## Performance Tips
 
-1. **Reduce Resolution** - Upload gambar yang lebih kecil untuk proses lebih cepat
-2. **Adjust Confidence** - Naikkan threshold untuk mengurangi false positives
-3. **GPU Usage** - Jika tersedia GPU, model akan otomatis menggunakan CUDA
-4. **Batch Processing** - Video diproses frame-by-frame secara streaming
+1. Reduce Resolution — Upload gambar yang lebih kecil untuk proses lebih cepat
+2. Adjust Confidence — Naikkan threshold untuk mengurangi false positives
+3. GPU Usage — Jika tersedia GPU, model akan otomatis menggunakan CUDA
+4. Batch Processing — Video diproses frame-by-frame secara streaming
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
-### Error: "Model not found"
-```
-Solusi: Verifikasi path model di app.py sesuai dengan lokasi file actual
-```
+### Error: Model not found
+Verifikasi path model di app.py sesuai dengan lokasi file actual
 
-### Error: "CUDA out of memory"
-```
-Solusi: Reduce image resolution atau gunakan model YOLOv11n (nano)
-```
+### Error: CUDA out of memory
+Reduce image resolution atau gunakan model YOLOv11n (nano)
 
 ### Slow Processing
-```
-Solusi: Check available CPU/GPU, reduce video resolution, atau close other applications
-```
+Check available CPU/GPU, reduce video resolution, atau close other applications
 
 ### File Upload Issues
-```
-Solusi: Pastikan file format supported (.jpg, .png, .jpeg untuk image, .mp4, .avi, .mov untuk video)
-```
+Pastikan file format supported (.jpg, .png, .jpeg untuk image, .mp4, .avi, .mov untuk video)
 
-## 📚 References
+## References
 
-- [Ultralytics YOLOv11 Documentation](https://docs.ultralytics.com/)
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [OpenCV Documentation](https://docs.opencv.org/)
+- Ultralytics YOLOv11 Documentation: https://docs.ultralytics.com/
+- Streamlit Documentation: https://docs.streamlit.io/
+- OpenCV Documentation: https://docs.opencv.org/
 
-## 📝 License
+## License
 
-Project ini dibuat sebagai bagian dari **UB Semester 7 - PCD Course**
+Project ini dibuat sebagai bagian dari UB Semester 7 - PCD Course
 
-## 👤 Author
+## Author
 
 Created for Portfolio Showcase
 
 ---
 
-**Last Updated**: September 2026
-
-**Status**: ✅ Production Ready
+Last Updated: September 2026
+Status: Production Ready

@@ -1,15 +1,15 @@
-# 🚀 Quick Start Guide - Plate Detection Streamlit App
+# Quick Start Guide - Plate Detection Streamlit App
 
-## ⚡ Cara Menjalankan (3 Langkah)
+## Run in 3 Steps
 
-### Opsi 1: Windows (Recommended)
+### Option 1: Windows (Recommended)
 ```bash
 1. Double-click file: run.bat
 2. Tunggu sampai browser terbuka otomatis
 3. Aplikasi siap digunakan di http://localhost:8501
 ```
 
-### Opsi 2: Manual (Windows/Linux/Mac)
+### Option 2: Manual (Windows/Linux/Mac)
 ```bash
 # 1. Navigate ke directory
 cd E:\porto\plate-detection-streamlit
@@ -23,9 +23,9 @@ streamlit run app.py
 
 ---
 
-## 🎯 Fitur yang Tersedia
+## Available Features
 
-### 1. Image Detection (📷 Tab)
+### 1. Image Detection (Image Tab)
 - Upload gambar (.jpg, .png, .jpeg)
 - Atau gunakan sample image yang tersedia
 - Lihat:
@@ -34,20 +34,20 @@ streamlit run app.py
   - Enhancement results (plat yang sudah di-enhance)
   - Confidence score untuk setiap deteksi
 
-### 2. Video Detection (🎥 Tab)
+### 2. Video Detection (Video Tab)
 - Upload video (.mp4, .avi, .mov)
 - Atau gunakan sample video
 - Processing progress bar (real-time)
 - Download hasil video dengan annotasi
 
-### 3. Settings (⚙️ Sidebar)
-- **Model Selection**
+### 3. Settings (Sidebar)
+- Model Selection
   - Trained Model (v23) - Recommended
   - Default YOLOv11n - Standard
-- **Enhancement Toggle** - ON/OFF enhancement plat
-- **Confidence Threshold** - Adjust detection sensitivity (0.1 - 1.0)
+- Enhancement Toggle — ON/OFF enhancement plat
+- Confidence Threshold — Adjust detection sensitivity (0.1 - 1.0)
 
-### 4. About (📚 Tab)
+### 4. About (About Tab)
 - Project information
 - Technical details
 - Model performance metrics
@@ -55,21 +55,21 @@ streamlit run app.py
 
 ---
 
-## 📊 Apa yang Akan Ditampilkan?
+## Output Display
 
-### Untuk Gambar:
+### For Images:
 ```
 Original Image          →  Detection Result
      ↓                            ↓
   Input              Bounding boxes + Labels
-  
+
 Plus:
 - Cropped Plates (individual detection results)
 - Enhancement comparison
 - Confidence scores
 ```
 
-### Untuk Video:
+### For Videos:
 ```
 Processing Progress    →  Output Video
     ↓                          ↓
@@ -79,18 +79,18 @@ Frame counting        Annotated with boxes
 
 ---
 
-## 🔧 Konfigurasi (jika diperlukan)
+## Configuration (if needed)
 
-### Jika Model Path Berbeda:
-Edit file `app.py`, cari bagian ini dan update path:
+### If Model Path Is Different:
+Edit file `app.py`, find this section and update path:
 
 ```python
 # Line ~120
 model_path = "E:\\UB\\Semester 7\\PCD\\Deteksi plat nomor\\runs\\detect\\plate_detector_v23\\weights\\best.pt"
 ```
 
-### Jika Sample Gambar/Video Path Berbeda:
-Edit di `app.py`, cari:
+### If Sample Image/Video Path Is Different:
+Edit in `app.py`, find:
 
 ```python
 # Line ~180 (untuk image)
@@ -102,17 +102,17 @@ sample_video_path = "E:\\UB\\Semester 7\\PCD\\Deteksi plat nomor\\input.mp4"
 
 ---
 
-## 💡 Tips Penggunaan
+## Usage Tips
 
-### Untuk Hasil Terbaik:
-1. **Gunakan gambar berkualitas tinggi** (HD preferred)
-2. **Plat nomor terlihat jelas** di gambar
-3. **Pencahayaan yang cukup** untuk deteksi akurat
-4. **Jika false positive**, naikkan confidence threshold
+### For Best Results:
+1. Use high-quality images (HD preferred)
+2. Plat nomor terlihat jelas di gambar
+3. Pencahayaan yang cukup untuk deteksi akurat
+4. Jika false positive, naikkan confidence threshold
 
 ### Performance:
-- **Image Processing**: ~0.5-2 detik per gambar
-- **Video Processing**: ~5-30 detik tergantung durasi
+- Image Processing: ~0.5-2 detik per gambar
+- Video Processing: ~5-30 detik tergantung durasi
 - Bisa menggunakan GPU jika tersedia (auto-detect)
 
 ### Troubleshooting:
@@ -126,7 +126,7 @@ sample_video_path = "E:\\UB\\Semester 7\\PCD\\Deteksi plat nomor\\input.mp4"
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 E:\porto\plate-detection-streamlit\
@@ -146,18 +146,18 @@ E:\UB\Semester 7\PCD\Deteksi plat nomor\
 
 ---
 
-## 🎨 Preview
+## App Features
 
 Aplikasi ini menampilkan:
-- ✅ Real-time detection preview
-- ✅ Interactive controls di sidebar
-- ✅ Multiple tabs untuk berbagai use case
-- ✅ Professional UI dengan Streamlit
-- ✅ Download functionality
+- Real-time detection preview
+- Interactive controls di sidebar
+- Multiple tabs untuk berbagai use case
+- Professional UI dengan Streamlit
+- Download functionality
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 **Q: Apa beda "Trained Model" vs "Default YOLOv11n"?**
 A: Trained Model adalah custom model yang sudah dilatih khusus untuk plat nomor Indonesia. Default adalah model standard YOLO. Gunakan Trained Model untuk hasil terbaik.
@@ -173,9 +173,9 @@ A: Ya, Streamlit bisa di-deploy ke Streamlit Cloud (gratis), Heroku, AWS, dll.
 
 ---
 
-## 📞 Support
+## Support
 
-Jika ada error:
+If error occurs:
 1. Cek console output (ada error message detail)
 2. Verifikasi semua paths sesuai
 3. Pastikan semua dependencies installed
@@ -183,4 +183,4 @@ Jika ada error:
 
 ---
 
-**Ready to go? Run `run.bat` sekarang!** 🚀
+Ready to go? Run `run.bat` now!

@@ -9,10 +9,10 @@
 ### 1. Create GitHub Repository
 
 Go to https://github.com/new and create:
-- **Repository name:** `plate-detection-streamlit`
-- **Description:** YOLOv11-based license plate detector with Streamlit
-- **Visibility:** Public
-- **Initialize:** Skip initialization (we'll push existing repo)
+- Repository name: `plate-detection-streamlit`
+- Description: YOLOv11-based license plate detector with Streamlit
+- Visibility: Public
+- Initialize: Skip initialization (we'll push existing repo)
 
 ### 2. Push Local Repository to GitHub
 
@@ -29,8 +29,8 @@ git push -u origin main
 ```
 
 When prompted:
-- **Username:** Your GitHub username
-- **Password:** Your GitHub Personal Access Token (or password if enabled)
+- Username: Your GitHub username
+- Password: Your GitHub Personal Access Token (or password if enabled)
 
 ### 3. Get GitHub Personal Access Token
 
@@ -48,10 +48,10 @@ If needed:
 1. Go to https://share.streamlit.io
 2. Click "New app"
 3. Fill in:
-   - **GitHub account:** midas79
-   - **Repository:** plate-detection-streamlit
-   - **Branch:** main
-   - **Main file path:** app.py
+   - GitHub account: midas79
+   - Repository: plate-detection-streamlit
+   - Branch: main
+   - Main file path: app.py
 4. Click "Deploy"
 
 ### 5. Wait for Deployment
@@ -121,4 +121,4 @@ Or download model from cloud storage when deployed.
 
 ---
 
-**You're ready to deploy!** Follow steps 1-6 above to get your app live.
+You're ready to deploy! Follow steps 1-6 above to get your app live.

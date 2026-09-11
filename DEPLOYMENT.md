@@ -8,7 +8,7 @@
 
 ### Steps
 
-1. **Push to GitHub**
+1. Push to GitHub
    ```bash
    cd E:\porto\plate-detection-streamlit
    git init
@@ -18,7 +18,7 @@
    git push -u origin main
    ```
 
-2. **Deploy to Streamlit Cloud**
+2. Deploy to Streamlit Cloud
    - Go to https://share.streamlit.io
    - Click "New app"
    - Select your GitHub repo
@@ -28,7 +28,7 @@
      - Main file path: `app.py`
    - Click "Deploy"
 
-3. **Configure Secrets** (if needed)
+3. Configure Secrets (if needed)
    - In Streamlit Cloud dashboard, click "Settings"
    - Add secrets for model paths if using cloud storage
 
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Access at: `http://localhost:8501`
+Access at: http://localhost:8501
 
 ---
 
@@ -100,24 +100,18 @@ For high traffic:
 ## Troubleshooting
 
 ### Model Loading Error
-```
 Error: "Model not found"
 → Verify model path matches actual file location
-```
 
 ### Memory Issues
-```
 Error: "CUDA out of memory"
 → Reduce image resolution or use CPU inference
 → Set: model.to('cpu') in code
-```
 
 ### File Upload Issues
-```
 Error: "File not supported"
 → Check file format (.jpg, .png, .mp4, .avi, .mov)
 → Check file size (max ~100MB)
-```
 
 ---
 
