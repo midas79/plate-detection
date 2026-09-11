@@ -40,6 +40,10 @@ def load_model(model_path):
     try:
         model = YOLO(model_path)
         return model
+    except FileNotFoundError:
+        st.warning(f"Model not found at {model_path}. Using default YOLOv11n.")
+        model = YOLO("yolov8n.pt")
+        return model
     except Exception as e:
         st.error(f"Error loading model: {e}")
         return None
